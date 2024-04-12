@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Used Car Price Predictor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/static/index.js" defer></script>
+</head>
+<body>
+    <!-- FORM -->
+    <div class="title">
+        <h1>Used Car Price Predictor</h1>
+    </div>
+
+    <div class="form">
+        <form id="car-form" action="/search" method="get">
+            <div class="form-group">
+                <label class="filter-label" for="brand">Brand</label>
+                <input class="filter-input" type="text" name="brand" placeholder="Tesla"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="model">Model</label>
+                <input class="filter-input" type="text" name="model" placeholder="Model X Long Range Plus"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="age">Age (yrs)</label>
+                <input class="filter-input" type="text" name="age" placeholder="4"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="milage">Milage</label>
+                <input class="filter-input" type="text" name="milage" placeholder="34000"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="horsepower">Horse Power</label>
+                <input class="filter-input" type="text" name="horsepower" placeholder="534"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="engine">Engine Displacement</label>
+                <input class="filter-input" type="text" name="engine" placeholder="3.72"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="fuel">Fuel Type</label>
+                <input class="filter-input" type="text" name="fuel" placeholder="Electric"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="ext_color">Exterior Color</label>
+                <input class="filter-input" type="text" name="ext_color" placeholder="Black"/>
+            </div>
+
+            <div class="form-group">
+                <label class="filter-label" for="int_clor">Interior Color</label>
+                <input class="filter-input" type="text" name="int_color" placeholder="Black"/>
+            </div>
+            
+            <!-- no search button but keep clear -->
+            <div class="button-group">
+                <input class="button" type="submit" value="Predict" />
+                <a class="button button-link" href="/">Clear</a>
+           </div>
+            
+        </form>
+    </div>
+
+    <div class="search-section" style="display: none;">
+
+    </div>
+
+</body>
+</html>
