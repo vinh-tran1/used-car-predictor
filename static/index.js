@@ -35,16 +35,19 @@ function handleResponse(data) {
     errorMsg.hide();
 
     if (data && data.response) {
-        let htmlContent = '<div class="results">';
-        htmlContent += `<p>Price: $${data.response}</p>`;
-        // htmlContent += `<p>Model: ${data.response.model}</p>`;
-        // htmlContent += `<p>Age: ${data.response.age} years</p>`;
-        // htmlContent += `<p>Milage: ${data.response.milage}</p>`;
-        // htmlContent += `<p>Horsepower: ${data.response.horsepower}</p>`;
-        // htmlContent += `<p>Engine Displacement: ${data.response.engine}</p>`;
-        // htmlContent += `<p>Fuel Type: ${data.response.fuel}</p>`;
-        // htmlContent += `<p>Exterior Color: ${data.response.ext_color}</p>`;
-        // htmlContent += `<p>Interior Color: ${data.response.int_color}</p>`;
+        let price = data.response;
+        let borderClass = '';
+
+        if (price >= 0 && price < 17000) {
+            borderClass = 'border-green';
+        } else if (price >= 17000 && price < 37000) {
+            borderClass = 'border-orange';
+        } else if (price >= 37000) {
+            borderClass = 'border-red';
+        }
+
+        let htmlContent = `<div class="results ${borderClass}">`;
+        htmlContent += `<p>$${price}</p>`;
         htmlContent += '</div>';
         resultsContainer.append(htmlContent);
     } else {

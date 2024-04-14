@@ -87,3 +87,37 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.results-container {
+    margin: 0 auto;
+    max-width: 600px; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    min-height: 100px;
+}
+
+.results-container p {
+    font-size: 32px;
+    text-align: center;
+    color: #424242;
+    margin: 0;
+    padding: 20px;
+}
+
+.results {
+    border-radius: 8px;
+}
+
+.border-green {
+    box-shadow: 0 0 10px #00ff00;
+}
+
+.border-orange {
+    box-shadow: 0 0 10px #ffa500;
+}
+
+.border-red {
+    box-shadow: 0 0 10px #ff0000;
+}
+
