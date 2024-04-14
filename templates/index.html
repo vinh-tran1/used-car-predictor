@@ -50,6 +50,11 @@
             </div>
 
             <div class="form-group">
+                <label class="filter-label" for="transmission">Transmission</label>
+                <input class="filter-input" type="text" name="transmission" placeholder="A/T"/>
+            </div>
+
+            <div class="form-group">
                 <label class="filter-label" for="ext_color">Exterior Color</label>
                 <input class="filter-input" type="text" name="ext_color" placeholder="Black"/>
             </div>
@@ -68,8 +73,18 @@
         </form>
     </div>
 
-    <div class="search-section" style="display: none;">
+    <!-- error message area (initially hidden, populated by js) -->
+    <div class="error-msg" style="display: none;">
+        <p></p>
+    </div>
 
+    <div class="search-section" style="display: none;">
+        <div class="title">
+            <h1>Price Estimate</h1>
+        </div>
+        <div class="results-container">
+            <!-- results here -->
+        </div>
     </div>
 
 </body>

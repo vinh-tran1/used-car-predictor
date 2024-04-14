@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify, make_response, render_template, abort
-
+import database as db
+import pandas as pd
 # Instantiate Flask App
 #-----------------------------------------------------------------------
 app = Flask(__name__, template_folder='./templates')
@@ -36,11 +37,11 @@ def search_results():
         horsepower = user_params_dict.get('horsepower', '')
         engine = user_params_dict.get('engine', '')
         fuel = user_params_dict.get('fuel', '')
+        transmission = user_params_dict.get('transmission', '')
         ext_color = user_params_dict.get('ext_color', '')
         int_color = user_params_dict.get('int_color', '')
 
-
-        filters = {
+        features = {
             'brand': brand,
             'model': model,
             'age': age,
@@ -48,13 +49,16 @@ def search_results():
             'horsepower': horsepower,
             'engine': engine,
             'fuel': fuel,
+            'transmission': transmission,
             'ext_color': ext_color,
             'int_color': int_color
         }
 
         # database call here
+        prediction = db.predict(features)
+        price = round(prediction[0], 2)
 
-        return jsonify({'response': filters})
+        return jsonify({'response': price})
 
     except SystemExit as e:
         return jsonify({'error': e})

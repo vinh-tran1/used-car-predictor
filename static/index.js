@@ -25,30 +25,30 @@ function getResults(event) {
 
 // handle ajax response
 function handleResponse(data) {
-
+    const resultsContainer = $('.results-container');
     const searchSection = $('.search-section');
     const errorMsg = $('.error-msg');
 
     // pre-processing: clear error messages
-    searchSection.empty();
+    resultsContainer.empty();
     searchSection.hide();
     errorMsg.hide();
 
     if (data && data.response) {
         let htmlContent = '<div class="results">';
-        htmlContent += `<p>Brand: ${data.response.brand}</p>`;
-        htmlContent += `<p>Model: ${data.response.model}</p>`;
-        htmlContent += `<p>Age: ${data.response.age} years</p>`;
-        htmlContent += `<p>Milage: ${data.response.milage}</p>`;
-        htmlContent += `<p>Horsepower: ${data.response.horsepower}</p>`;
-        htmlContent += `<p>Engine Displacement: ${data.response.engine}</p>`;
-        htmlContent += `<p>Fuel Type: ${data.response.fuel}</p>`;
-        htmlContent += `<p>Exterior Color: ${data.response.ext_color}</p>`;
-        htmlContent += `<p>Interior Color: ${data.response.int_color}</p>`;
+        htmlContent += `<p>Price: $${data.response}</p>`;
+        // htmlContent += `<p>Model: ${data.response.model}</p>`;
+        // htmlContent += `<p>Age: ${data.response.age} years</p>`;
+        // htmlContent += `<p>Milage: ${data.response.milage}</p>`;
+        // htmlContent += `<p>Horsepower: ${data.response.horsepower}</p>`;
+        // htmlContent += `<p>Engine Displacement: ${data.response.engine}</p>`;
+        // htmlContent += `<p>Fuel Type: ${data.response.fuel}</p>`;
+        // htmlContent += `<p>Exterior Color: ${data.response.ext_color}</p>`;
+        // htmlContent += `<p>Interior Color: ${data.response.int_color}</p>`;
         htmlContent += '</div>';
-        searchSection.append(htmlContent);
+        resultsContainer.append(htmlContent);
     } else {
-        searchSection.append('<p>No data available.</p>');
+        resultsContainer.append('<p>No data available.</p>');
     }
 
     searchSection.show();

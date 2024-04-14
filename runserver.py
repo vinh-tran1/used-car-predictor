@@ -1,10 +1,3 @@
-"""
-program: runserver.py
-by: Vinh and Nikhil
-
-description: runs flask app on specified port
-
-"""
 import argparse
 import sys
 from app import app
